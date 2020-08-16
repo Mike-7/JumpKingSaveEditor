@@ -1,8 +1,8 @@
 MONOWASM = C:\Users\Mike\Desktop\mono-wasm
 
-JumpKing.dll: JumpKing.cs Save.cs index.html script.js
-	mcs /target:library -out:JumpKing.dll /noconfig /nostdlib /r:$(MONOWASM)\wasm-bcl\wasm\mscorlib.dll /r:$(MONOWASM)\wasm-bcl\wasm\System.dll /r:$(MONOWASM)\wasm-bcl\wasm\System.Core.dll /r:$(MONOWASM)\wasm-bcl\wasm\Facades\netstandard.dll /r:$(MONOWASM)\wasm-bcl\wasm\System.Net.Http.dll /r:$(MONOWASM)\framework\WebAssembly.Bindings.dll /r:$(MONOWASM)\framework\System.Net.Http.WebAssemblyHttpHandler JumpKing.cs Save.cs
-	mono "$(MONOWASM)\packager.exe" --copy=always --out=publish --asset=index.html --asset=script.js JumpKing.dll
+JumpKing.dll: src\JumpKing.cs src\Save.cs src\index.html src\script.js
+	mcs /target:library -out:JumpKing.dll /noconfig /nostdlib /r:$(MONOWASM)\wasm-bcl\wasm\mscorlib.dll /r:$(MONOWASM)\wasm-bcl\wasm\System.dll /r:$(MONOWASM)\wasm-bcl\wasm\System.Core.dll /r:$(MONOWASM)\wasm-bcl\wasm\Facades\netstandard.dll /r:$(MONOWASM)\wasm-bcl\wasm\System.Net.Http.dll /r:$(MONOWASM)\framework\WebAssembly.Bindings.dll /r:$(MONOWASM)\framework\System.Net.Http.WebAssemblyHttpHandler src\JumpKing.cs src\Save.cs
+	mono "$(MONOWASM)\packager.exe" --copy=always --out=publish --asset=src\index.html --asset=src\script.js JumpKing.dll
 
 clean:
 	del JumpKing.dll
