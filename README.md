@@ -1,6 +1,6 @@
 # Jump King Save Editor
 
-Simple web save editor for Jump King written in C# and compiled to WebAssembly with mono-wasm.
+Web save editor for Jump King written in C# and compiled to WebAssembly with mono-wasm.
 
 You can find live version here:  
 (Size of the app is 15 mb so it can be loading for several seconds):  
